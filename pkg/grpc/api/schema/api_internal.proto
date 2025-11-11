@@ -11,6 +11,7 @@ import "messages.proto";
 service BcApiGatewayInternal {
   rpc CreateMerchant               (api.CreateMerchantRequest)               returns (api.CreateMerchantResponse) {}
   rpc CreateWallet                 (api.CreateWalletRequest)                 returns (api.CreateWalletResponse) {}
+  rpc ChangeWalletStatus           (api.ChangeWalletStatusRequest)           returns (api.ChangeWalletStatusResponse) {}
   rpc CreateAccount                (api.CreateAccountRequest)                returns (api.CreateAccountResponse) {}
   rpc CreateCurrency               (api.CreateCurrencyRequest)               returns (api.CreateCurrencyResponse) {}
 

@@ -21,6 +21,8 @@
     - [BcTxInfo](#api-BcTxInfo)
     - [BcTxInfo.OperationsEntry](#api-BcTxInfo-OperationsEntry)
     - [BcTxOperation](#api-BcTxOperation)
+    - [ChangeWalletStatusRequest](#api-ChangeWalletStatusRequest)
+    - [ChangeWalletStatusResponse](#api-ChangeWalletStatusResponse)
     - [CreateAccountRequest](#api-CreateAccountRequest)
     - [CreateAccountResponse](#api-CreateAccountResponse)
     - [CreateCurrencyRequest](#api-CreateCurrencyRequest)
@@ -114,6 +116,7 @@ Internal RPC api gateway
 | ----------- | ------------ | ------------- | ------------|
 | CreateMerchant | [CreateMerchantRequest](#api-CreateMerchantRequest) | [CreateMerchantResponse](#api-CreateMerchantResponse) |  |
 | CreateWallet | [CreateWalletRequest](#api-CreateWalletRequest) | [CreateWalletResponse](#api-CreateWalletResponse) |  |
+| ChangeWalletStatus | [ChangeWalletStatusRequest](#api-ChangeWalletStatusRequest) | [ChangeWalletStatusResponse](#api-ChangeWalletStatusResponse) |  |
 | CreateAccount | [CreateAccountRequest](#api-CreateAccountRequest) | [CreateAccountResponse](#api-CreateAccountResponse) |  |
 | CreateCurrency | [CreateCurrencyRequest](#api-CreateCurrencyRequest) | [CreateCurrencyResponse](#api-CreateCurrencyResponse) |  |
 | AddAccountCurrency | [AddAccountCurrencyRequest](#api-AddAccountCurrencyRequest) | [AddAccountCurrencyResponse](#api-AddAccountCurrencyResponse) |  |
@@ -364,6 +367,38 @@ Operation
 | Address | [string](#string) |  |  |
 | Amount | [uint64](#uint64) |  |  |
 | CurrencyIdentifier | [CurrencyIdentity](#api-CurrencyIdentity) |  |  |
+
+
+
+
+
+
+<a name="api-ChangeWalletStatusRequest"></a>
+
+### ChangeWalletStatusRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| WalletIdentifier | [WalletIdentity](#api-WalletIdentity) |  |  |
+| WalletStatus | [WalletStatus](#api-WalletStatus) |  |  |
+
+
+
+
+
+
+<a name="api-ChangeWalletStatusResponse"></a>
+
+### ChangeWalletStatusResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| WalletIdentifier | [WalletIdentity](#api-WalletIdentity) |  |  |
+| WalletStatus | [WalletStatus](#api-WalletStatus) |  |  |
 
 
 
