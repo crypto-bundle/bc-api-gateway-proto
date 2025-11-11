@@ -312,6 +312,16 @@ message CreateWalletResponse {
   repeated CurrencyInfo CurrencyInfoList = 6;
 }
 
+message ChangeWalletStatusRequest {
+  WalletIdentity WalletIdentifier = 1;
+  WalletStatus WalletStatus = 2;
+}
+
+message ChangeWalletStatusResponse {
+  WalletIdentity WalletIdentifier = 1;
+  WalletStatus WalletStatus = 2;
+}
+
 message CreateAccountRequest {}
 message CreateAccountResponse {}
 

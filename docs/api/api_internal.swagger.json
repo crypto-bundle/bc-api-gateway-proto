@@ -203,6 +203,17 @@
       ],
       "default": "PLACEHOLDER_BC_TX_STATUS"
     },
+    "apiChangeWalletStatusResponse": {
+      "type": "object",
+      "properties": {
+        "WalletIdentifier": {
+          "$ref": "#/definitions/apiWalletIdentity"
+        },
+        "WalletStatus": {
+          "$ref": "#/definitions/apiWalletStatus"
+        }
+      }
+    },
     "apiCreateAccountResponse": {
       "type": "object"
     },

@@ -24,10 +24,11 @@ var File_api_internal_proto protoreflect.FileDescriptor
 
 const file_api_internal_proto_rawDesc = "" +
 	"\n" +
-	"\x12api_internal.proto\x12\x03api\x1a\x0emessages.proto2\xfc\b\n" +
+	"\x12api_internal.proto\x12\x03api\x1a\x0emessages.proto2\xd5\t\n" +
 	"\x14BcApiGatewayInternal\x12K\n" +
 	"\x0eCreateMerchant\x12\x1a.api.CreateMerchantRequest\x1a\x1b.api.CreateMerchantResponse\"\x00\x12E\n" +
-	"\fCreateWallet\x12\x18.api.CreateWalletRequest\x1a\x19.api.CreateWalletResponse\"\x00\x12H\n" +
+	"\fCreateWallet\x12\x18.api.CreateWalletRequest\x1a\x19.api.CreateWalletResponse\"\x00\x12W\n" +
+	"\x12ChangeWalletStatus\x12\x1e.api.ChangeWalletStatusRequest\x1a\x1f.api.ChangeWalletStatusResponse\"\x00\x12H\n" +
 	"\rCreateAccount\x12\x19.api.CreateAccountRequest\x1a\x1a.api.CreateAccountResponse\"\x00\x12K\n" +
 	"\x0eCreateCurrency\x12\x1a.api.CreateCurrencyRequest\x1a\x1b.api.CreateCurrencyResponse\"\x00\x12W\n" +
 	"\x12AddAccountCurrency\x12\x1e.api.AddAccountCurrencyRequest\x1a\x1f.api.AddAccountCurrencyResponse\"\x00\x12?\n" +
@@ -45,64 +46,68 @@ const file_api_internal_proto_rawDesc = "" +
 var file_api_internal_proto_goTypes = []any{
 	(*CreateMerchantRequest)(nil),                // 0: api.CreateMerchantRequest
 	(*CreateWalletRequest)(nil),                  // 1: api.CreateWalletRequest
-	(*CreateAccountRequest)(nil),                 // 2: api.CreateAccountRequest
-	(*CreateCurrencyRequest)(nil),                // 3: api.CreateCurrencyRequest
-	(*AddAccountCurrencyRequest)(nil),            // 4: api.AddAccountCurrencyRequest
-	(*GetWalletsRequest)(nil),                    // 5: api.GetWalletsRequest
-	(*GetCurrenciesRequest)(nil),                 // 6: api.GetCurrenciesRequest
-	(*GetAllWalletsRequest)(nil),                 // 7: api.GetAllWalletsRequest
-	(*GetTransactionRequest)(nil),                // 8: api.GetTransactionRequest
-	(*GetWithdrawOrderRequest)(nil),              // 9: api.GetWithdrawOrderRequest
-	(*GetOrderInfoRequest)(nil),                  // 10: api.GetOrderInfoRequest
-	(*GetOrderListByLimitAndOffsetRequest)(nil),  // 11: api.GetOrderListByLimitAndOffsetRequest
-	(*GetOrderListByTimeRangeRequest)(nil),       // 12: api.GetOrderListByTimeRangeRequest
-	(*GetEventListRequest)(nil),                  // 13: api.GetEventListRequest
-	(*CreateMerchantResponse)(nil),               // 14: api.CreateMerchantResponse
-	(*CreateWalletResponse)(nil),                 // 15: api.CreateWalletResponse
-	(*CreateAccountResponse)(nil),                // 16: api.CreateAccountResponse
-	(*CreateCurrencyResponse)(nil),               // 17: api.CreateCurrencyResponse
-	(*AddAccountCurrencyResponse)(nil),           // 18: api.AddAccountCurrencyResponse
-	(*GetWalletsResponse)(nil),                   // 19: api.GetWalletsResponse
-	(*GetCurrenciesResponse)(nil),                // 20: api.GetCurrenciesResponse
-	(*GetAllWalletsResponse)(nil),                // 21: api.GetAllWalletsResponse
-	(*GetTransactionResponse)(nil),               // 22: api.GetTransactionResponse
-	(*GetWithdrawOrderResponse)(nil),             // 23: api.GetWithdrawOrderResponse
-	(*GetOrderInfoResponse)(nil),                 // 24: api.GetOrderInfoResponse
-	(*GetOrderListByLimitAndOffsetResponse)(nil), // 25: api.GetOrderListByLimitAndOffsetResponse
-	(*GetOrderListByTimeRangeResponse)(nil),      // 26: api.GetOrderListByTimeRangeResponse
-	(*GetEventListResponse)(nil),                 // 27: api.GetEventListResponse
+	(*ChangeWalletStatusRequest)(nil),            // 2: api.ChangeWalletStatusRequest
+	(*CreateAccountRequest)(nil),                 // 3: api.CreateAccountRequest
+	(*CreateCurrencyRequest)(nil),                // 4: api.CreateCurrencyRequest
+	(*AddAccountCurrencyRequest)(nil),            // 5: api.AddAccountCurrencyRequest
+	(*GetWalletsRequest)(nil),                    // 6: api.GetWalletsRequest
+	(*GetCurrenciesRequest)(nil),                 // 7: api.GetCurrenciesRequest
+	(*GetAllWalletsRequest)(nil),                 // 8: api.GetAllWalletsRequest
+	(*GetTransactionRequest)(nil),                // 9: api.GetTransactionRequest
+	(*GetWithdrawOrderRequest)(nil),              // 10: api.GetWithdrawOrderRequest
+	(*GetOrderInfoRequest)(nil),                  // 11: api.GetOrderInfoRequest
+	(*GetOrderListByLimitAndOffsetRequest)(nil),  // 12: api.GetOrderListByLimitAndOffsetRequest
+	(*GetOrderListByTimeRangeRequest)(nil),       // 13: api.GetOrderListByTimeRangeRequest
+	(*GetEventListRequest)(nil),                  // 14: api.GetEventListRequest
+	(*CreateMerchantResponse)(nil),               // 15: api.CreateMerchantResponse
+	(*CreateWalletResponse)(nil),                 // 16: api.CreateWalletResponse
+	(*ChangeWalletStatusResponse)(nil),           // 17: api.ChangeWalletStatusResponse
+	(*CreateAccountResponse)(nil),                // 18: api.CreateAccountResponse
+	(*CreateCurrencyResponse)(nil),               // 19: api.CreateCurrencyResponse
+	(*AddAccountCurrencyResponse)(nil),           // 20: api.AddAccountCurrencyResponse
+	(*GetWalletsResponse)(nil),                   // 21: api.GetWalletsResponse
+	(*GetCurrenciesResponse)(nil),                // 22: api.GetCurrenciesResponse
+	(*GetAllWalletsResponse)(nil),                // 23: api.GetAllWalletsResponse
+	(*GetTransactionResponse)(nil),               // 24: api.GetTransactionResponse
+	(*GetWithdrawOrderResponse)(nil),             // 25: api.GetWithdrawOrderResponse
+	(*GetOrderInfoResponse)(nil),                 // 26: api.GetOrderInfoResponse
+	(*GetOrderListByLimitAndOffsetResponse)(nil), // 27: api.GetOrderListByLimitAndOffsetResponse
+	(*GetOrderListByTimeRangeResponse)(nil),      // 28: api.GetOrderListByTimeRangeResponse
+	(*GetEventListResponse)(nil),                 // 29: api.GetEventListResponse
 }
 var file_api_internal_proto_depIdxs = []int32{
 	0,  // 0: api.BcApiGatewayInternal.CreateMerchant:input_type -> api.CreateMerchantRequest
 	1,  // 1: api.BcApiGatewayInternal.CreateWallet:input_type -> api.CreateWalletRequest
-	2,  // 2: api.BcApiGatewayInternal.CreateAccount:input_type -> api.CreateAccountRequest
-	3,  // 3: api.BcApiGatewayInternal.CreateCurrency:input_type -> api.CreateCurrencyRequest
-	4,  // 4: api.BcApiGatewayInternal.AddAccountCurrency:input_type -> api.AddAccountCurrencyRequest
-	5,  // 5: api.BcApiGatewayInternal.GetWallets:input_type -> api.GetWalletsRequest
-	6,  // 6: api.BcApiGatewayInternal.GetCurrencies:input_type -> api.GetCurrenciesRequest
-	7,  // 7: api.BcApiGatewayInternal.GetAllWallets:input_type -> api.GetAllWalletsRequest
-	8,  // 8: api.BcApiGatewayInternal.GetTransaction:input_type -> api.GetTransactionRequest
-	9,  // 9: api.BcApiGatewayInternal.GetWithdrawOrder:input_type -> api.GetWithdrawOrderRequest
-	10, // 10: api.BcApiGatewayInternal.GetOrderInfo:input_type -> api.GetOrderInfoRequest
-	11, // 11: api.BcApiGatewayInternal.GetOrderListByLimitAndOffset:input_type -> api.GetOrderListByLimitAndOffsetRequest
-	12, // 12: api.BcApiGatewayInternal.GetOrderListByTimeRange:input_type -> api.GetOrderListByTimeRangeRequest
-	13, // 13: api.BcApiGatewayInternal.GetEventList:input_type -> api.GetEventListRequest
-	14, // 14: api.BcApiGatewayInternal.CreateMerchant:output_type -> api.CreateMerchantResponse
-	15, // 15: api.BcApiGatewayInternal.CreateWallet:output_type -> api.CreateWalletResponse
-	16, // 16: api.BcApiGatewayInternal.CreateAccount:output_type -> api.CreateAccountResponse
-	17, // 17: api.BcApiGatewayInternal.CreateCurrency:output_type -> api.CreateCurrencyResponse
-	18, // 18: api.BcApiGatewayInternal.AddAccountCurrency:output_type -> api.AddAccountCurrencyResponse
-	19, // 19: api.BcApiGatewayInternal.GetWallets:output_type -> api.GetWalletsResponse
-	20, // 20: api.BcApiGatewayInternal.GetCurrencies:output_type -> api.GetCurrenciesResponse
-	21, // 21: api.BcApiGatewayInternal.GetAllWallets:output_type -> api.GetAllWalletsResponse
-	22, // 22: api.BcApiGatewayInternal.GetTransaction:output_type -> api.GetTransactionResponse
-	23, // 23: api.BcApiGatewayInternal.GetWithdrawOrder:output_type -> api.GetWithdrawOrderResponse
-	24, // 24: api.BcApiGatewayInternal.GetOrderInfo:output_type -> api.GetOrderInfoResponse
-	25, // 25: api.BcApiGatewayInternal.GetOrderListByLimitAndOffset:output_type -> api.GetOrderListByLimitAndOffsetResponse
-	26, // 26: api.BcApiGatewayInternal.GetOrderListByTimeRange:output_type -> api.GetOrderListByTimeRangeResponse
-	27, // 27: api.BcApiGatewayInternal.GetEventList:output_type -> api.GetEventListResponse
-	14, // [14:28] is the sub-list for method output_type
-	0,  // [0:14] is the sub-list for method input_type
+	2,  // 2: api.BcApiGatewayInternal.ChangeWalletStatus:input_type -> api.ChangeWalletStatusRequest
+	3,  // 3: api.BcApiGatewayInternal.CreateAccount:input_type -> api.CreateAccountRequest
+	4,  // 4: api.BcApiGatewayInternal.CreateCurrency:input_type -> api.CreateCurrencyRequest
+	5,  // 5: api.BcApiGatewayInternal.AddAccountCurrency:input_type -> api.AddAccountCurrencyRequest
+	6,  // 6: api.BcApiGatewayInternal.GetWallets:input_type -> api.GetWalletsRequest
+	7,  // 7: api.BcApiGatewayInternal.GetCurrencies:input_type -> api.GetCurrenciesRequest
+	8,  // 8: api.BcApiGatewayInternal.GetAllWallets:input_type -> api.GetAllWalletsRequest
+	9,  // 9: api.BcApiGatewayInternal.GetTransaction:input_type -> api.GetTransactionRequest
+	10, // 10: api.BcApiGatewayInternal.GetWithdrawOrder:input_type -> api.GetWithdrawOrderRequest
+	11, // 11: api.BcApiGatewayInternal.GetOrderInfo:input_type -> api.GetOrderInfoRequest
+	12, // 12: api.BcApiGatewayInternal.GetOrderListByLimitAndOffset:input_type -> api.GetOrderListByLimitAndOffsetRequest
+	13, // 13: api.BcApiGatewayInternal.GetOrderListByTimeRange:input_type -> api.GetOrderListByTimeRangeRequest
+	14, // 14: api.BcApiGatewayInternal.GetEventList:input_type -> api.GetEventListRequest
+	15, // 15: api.BcApiGatewayInternal.CreateMerchant:output_type -> api.CreateMerchantResponse
+	16, // 16: api.BcApiGatewayInternal.CreateWallet:output_type -> api.CreateWalletResponse
+	17, // 17: api.BcApiGatewayInternal.ChangeWalletStatus:output_type -> api.ChangeWalletStatusResponse
+	18, // 18: api.BcApiGatewayInternal.CreateAccount:output_type -> api.CreateAccountResponse
+	19, // 19: api.BcApiGatewayInternal.CreateCurrency:output_type -> api.CreateCurrencyResponse
+	20, // 20: api.BcApiGatewayInternal.AddAccountCurrency:output_type -> api.AddAccountCurrencyResponse
+	21, // 21: api.BcApiGatewayInternal.GetWallets:output_type -> api.GetWalletsResponse
+	22, // 22: api.BcApiGatewayInternal.GetCurrencies:output_type -> api.GetCurrenciesResponse
+	23, // 23: api.BcApiGatewayInternal.GetAllWallets:output_type -> api.GetAllWalletsResponse
+	24, // 24: api.BcApiGatewayInternal.GetTransaction:output_type -> api.GetTransactionResponse
+	25, // 25: api.BcApiGatewayInternal.GetWithdrawOrder:output_type -> api.GetWithdrawOrderResponse
+	26, // 26: api.BcApiGatewayInternal.GetOrderInfo:output_type -> api.GetOrderInfoResponse
+	27, // 27: api.BcApiGatewayInternal.GetOrderListByLimitAndOffset:output_type -> api.GetOrderListByLimitAndOffsetResponse
+	28, // 28: api.BcApiGatewayInternal.GetOrderListByTimeRange:output_type -> api.GetOrderListByTimeRangeResponse
+	29, // 29: api.BcApiGatewayInternal.GetEventList:output_type -> api.GetEventListResponse
+	15, // [15:30] is the sub-list for method output_type
+	0,  // [0:15] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
