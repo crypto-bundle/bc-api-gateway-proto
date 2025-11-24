@@ -322,6 +322,16 @@ message ChangeWalletStatusResponse {
   WalletStatus WalletStatus = 2;
 }
 
+message ChangeAccountStatusRequest{
+  AccountIdentity AccountIdentifier = 1;
+  AccountStatus AccountStatus = 2;
+}
+
+message ChangeAccountStatusResponse{
+  AccountIdentity AccountIdentifier = 1;
+  AccountStatus AccountStatus = 2;
+}
+
 message CreateAccountRequest {}
 message CreateAccountResponse {}
 
