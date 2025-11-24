@@ -21,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	BcApiGatewayInternal_CreateMerchant_FullMethodName               = "/api.BcApiGatewayInternal/CreateMerchant"
 	BcApiGatewayInternal_CreateWallet_FullMethodName                 = "/api.BcApiGatewayInternal/CreateWallet"
-	BcApiGatewayInternal_ChangeAccountStauts_FullMethodName          = "/api.BcApiGatewayInternal/ChangeAccountStauts"
+	BcApiGatewayInternal_ChangeAccountStatus_FullMethodName          = "/api.BcApiGatewayInternal/ChangeAccountStatus"
 	BcApiGatewayInternal_ChangeWalletStatus_FullMethodName           = "/api.BcApiGatewayInternal/ChangeWalletStatus"
 	BcApiGatewayInternal_CreateAccount_FullMethodName                = "/api.BcApiGatewayInternal/CreateAccount"
 	BcApiGatewayInternal_CreateCurrency_FullMethodName               = "/api.BcApiGatewayInternal/CreateCurrency"
@@ -45,7 +45,7 @@ const (
 type BcApiGatewayInternalClient interface {
 	CreateMerchant(ctx context.Context, in *CreateMerchantRequest, opts ...grpc.CallOption) (*CreateMerchantResponse, error)
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
-	ChangeAccountStauts(ctx context.Context, in *ChangeAccountStatusRequest, opts ...grpc.CallOption) (*ChangeAccountStatusResponse, error)
+	ChangeAccountStatus(ctx context.Context, in *ChangeAccountStatusRequest, opts ...grpc.CallOption) (*ChangeAccountStatusResponse, error)
 	ChangeWalletStatus(ctx context.Context, in *ChangeWalletStatusRequest, opts ...grpc.CallOption) (*ChangeWalletStatusResponse, error)
 	CreateAccount(ctx context.Context, in *CreateAccountRequest, opts ...grpc.CallOption) (*CreateAccountResponse, error)
 	CreateCurrency(ctx context.Context, in *CreateCurrencyRequest, opts ...grpc.CallOption) (*CreateCurrencyResponse, error)
@@ -89,10 +89,10 @@ func (c *bcApiGatewayInternalClient) CreateWallet(ctx context.Context, in *Creat
 	return out, nil
 }
 
-func (c *bcApiGatewayInternalClient) ChangeAccountStauts(ctx context.Context, in *ChangeAccountStatusRequest, opts ...grpc.CallOption) (*ChangeAccountStatusResponse, error) {
+func (c *bcApiGatewayInternalClient) ChangeAccountStatus(ctx context.Context, in *ChangeAccountStatusRequest, opts ...grpc.CallOption) (*ChangeAccountStatusResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ChangeAccountStatusResponse)
-	err := c.cc.Invoke(ctx, BcApiGatewayInternal_ChangeAccountStauts_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, BcApiGatewayInternal_ChangeAccountStatus_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -237,7 +237,7 @@ func (c *bcApiGatewayInternalClient) GetEventList(ctx context.Context, in *GetEv
 type BcApiGatewayInternalServer interface {
 	CreateMerchant(context.Context, *CreateMerchantRequest) (*CreateMerchantResponse, error)
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
-	ChangeAccountStauts(context.Context, *ChangeAccountStatusRequest) (*ChangeAccountStatusResponse, error)
+	ChangeAccountStatus(context.Context, *ChangeAccountStatusRequest) (*ChangeAccountStatusResponse, error)
 	ChangeWalletStatus(context.Context, *ChangeWalletStatusRequest) (*ChangeWalletStatusResponse, error)
 	CreateAccount(context.Context, *CreateAccountRequest) (*CreateAccountResponse, error)
 	CreateCurrency(context.Context, *CreateCurrencyRequest) (*CreateCurrencyResponse, error)
@@ -267,8 +267,8 @@ func (UnimplementedBcApiGatewayInternalServer) CreateMerchant(context.Context, *
 func (UnimplementedBcApiGatewayInternalServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
 }
-func (UnimplementedBcApiGatewayInternalServer) ChangeAccountStauts(context.Context, *ChangeAccountStatusRequest) (*ChangeAccountStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ChangeAccountStauts not implemented")
+func (UnimplementedBcApiGatewayInternalServer) ChangeAccountStatus(context.Context, *ChangeAccountStatusRequest) (*ChangeAccountStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangeAccountStatus not implemented")
 }
 func (UnimplementedBcApiGatewayInternalServer) ChangeWalletStatus(context.Context, *ChangeWalletStatusRequest) (*ChangeWalletStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangeWalletStatus not implemented")
@@ -366,20 +366,20 @@ func _BcApiGatewayInternal_CreateWallet_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BcApiGatewayInternal_ChangeAccountStauts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _BcApiGatewayInternal_ChangeAccountStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ChangeAccountStatusRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BcApiGatewayInternalServer).ChangeAccountStauts(ctx, in)
+		return srv.(BcApiGatewayInternalServer).ChangeAccountStatus(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: BcApiGatewayInternal_ChangeAccountStauts_FullMethodName,
+		FullMethod: BcApiGatewayInternal_ChangeAccountStatus_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BcApiGatewayInternalServer).ChangeAccountStauts(ctx, req.(*ChangeAccountStatusRequest))
+		return srv.(BcApiGatewayInternalServer).ChangeAccountStatus(ctx, req.(*ChangeAccountStatusRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -634,8 +634,8 @@ var BcApiGatewayInternal_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _BcApiGatewayInternal_CreateWallet_Handler,
 		},
 		{
-			MethodName: "ChangeAccountStauts",
-			Handler:    _BcApiGatewayInternal_ChangeAccountStauts_Handler,
+			MethodName: "ChangeAccountStatus",
+			Handler:    _BcApiGatewayInternal_ChangeAccountStatus_Handler,
 		},
 		{
 			MethodName: "ChangeWalletStatus",

@@ -29,7 +29,7 @@ const file_api_internal_proto_rawDesc = "" +
 	"\x14BcApiGatewayInternal\x12K\n" +
 	"\x0eCreateMerchant\x12\x1a.api.CreateMerchantRequest\x1a\x1b.api.CreateMerchantResponse\"\x00\x12E\n" +
 	"\fCreateWallet\x12\x18.api.CreateWalletRequest\x1a\x19.api.CreateWalletResponse\"\x00\x12Z\n" +
-	"\x13ChangeAccountStauts\x12\x1f.api.ChangeAccountStatusRequest\x1a .api.ChangeAccountStatusResponse\"\x00\x12W\n" +
+	"\x13ChangeAccountStatus\x12\x1f.api.ChangeAccountStatusRequest\x1a .api.ChangeAccountStatusResponse\"\x00\x12W\n" +
 	"\x12ChangeWalletStatus\x12\x1e.api.ChangeWalletStatusRequest\x1a\x1f.api.ChangeWalletStatusResponse\"\x00\x12H\n" +
 	"\rCreateAccount\x12\x19.api.CreateAccountRequest\x1a\x1a.api.CreateAccountResponse\"\x00\x12K\n" +
 	"\x0eCreateCurrency\x12\x1a.api.CreateCurrencyRequest\x1a\x1b.api.CreateCurrencyResponse\"\x00\x12W\n" +
@@ -82,7 +82,7 @@ var file_api_internal_proto_goTypes = []any{
 var file_api_internal_proto_depIdxs = []int32{
 	0,  // 0: api.BcApiGatewayInternal.CreateMerchant:input_type -> api.CreateMerchantRequest
 	1,  // 1: api.BcApiGatewayInternal.CreateWallet:input_type -> api.CreateWalletRequest
-	2,  // 2: api.BcApiGatewayInternal.ChangeAccountStauts:input_type -> api.ChangeAccountStatusRequest
+	2,  // 2: api.BcApiGatewayInternal.ChangeAccountStatus:input_type -> api.ChangeAccountStatusRequest
 	3,  // 3: api.BcApiGatewayInternal.ChangeWalletStatus:input_type -> api.ChangeWalletStatusRequest
 	4,  // 4: api.BcApiGatewayInternal.CreateAccount:input_type -> api.CreateAccountRequest
 	5,  // 5: api.BcApiGatewayInternal.CreateCurrency:input_type -> api.CreateCurrencyRequest
@@ -98,7 +98,7 @@ var file_api_internal_proto_depIdxs = []int32{
 	15, // 15: api.BcApiGatewayInternal.GetEventList:input_type -> api.GetEventListRequest
 	16, // 16: api.BcApiGatewayInternal.CreateMerchant:output_type -> api.CreateMerchantResponse
 	17, // 17: api.BcApiGatewayInternal.CreateWallet:output_type -> api.CreateWalletResponse
-	18, // 18: api.BcApiGatewayInternal.ChangeAccountStauts:output_type -> api.ChangeAccountStatusResponse
+	18, // 18: api.BcApiGatewayInternal.ChangeAccountStatus:output_type -> api.ChangeAccountStatusResponse
 	19, // 19: api.BcApiGatewayInternal.ChangeWalletStatus:output_type -> api.ChangeWalletStatusResponse
 	20, // 20: api.BcApiGatewayInternal.CreateAccount:output_type -> api.CreateAccountResponse
 	21, // 21: api.BcApiGatewayInternal.CreateCurrency:output_type -> api.CreateCurrencyResponse
