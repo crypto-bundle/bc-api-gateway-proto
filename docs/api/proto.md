@@ -21,6 +21,8 @@
     - [BcTxInfo](#api-BcTxInfo)
     - [BcTxInfo.OperationsEntry](#api-BcTxInfo-OperationsEntry)
     - [BcTxOperation](#api-BcTxOperation)
+    - [ChangeAccountStatusRequest](#api-ChangeAccountStatusRequest)
+    - [ChangeAccountStatusResponse](#api-ChangeAccountStatusResponse)
     - [ChangeWalletStatusRequest](#api-ChangeWalletStatusRequest)
     - [ChangeWalletStatusResponse](#api-ChangeWalletStatusResponse)
     - [CreateAccountRequest](#api-CreateAccountRequest)
@@ -116,6 +118,7 @@ Internal RPC api gateway
 | ----------- | ------------ | ------------- | ------------|
 | CreateMerchant | [CreateMerchantRequest](#api-CreateMerchantRequest) | [CreateMerchantResponse](#api-CreateMerchantResponse) |  |
 | CreateWallet | [CreateWalletRequest](#api-CreateWalletRequest) | [CreateWalletResponse](#api-CreateWalletResponse) |  |
+| ChangeAccountStatus | [ChangeAccountStatusRequest](#api-ChangeAccountStatusRequest) | [ChangeAccountStatusResponse](#api-ChangeAccountStatusResponse) |  |
 | ChangeWalletStatus | [ChangeWalletStatusRequest](#api-ChangeWalletStatusRequest) | [ChangeWalletStatusResponse](#api-ChangeWalletStatusResponse) |  |
 | CreateAccount | [CreateAccountRequest](#api-CreateAccountRequest) | [CreateAccountResponse](#api-CreateAccountResponse) |  |
 | CreateCurrency | [CreateCurrencyRequest](#api-CreateCurrencyRequest) | [CreateCurrencyResponse](#api-CreateCurrencyResponse) |  |
@@ -367,6 +370,38 @@ Operation
 | Address | [string](#string) |  |  |
 | Amount | [uint64](#uint64) |  |  |
 | CurrencyIdentifier | [CurrencyIdentity](#api-CurrencyIdentity) |  |  |
+
+
+
+
+
+
+<a name="api-ChangeAccountStatusRequest"></a>
+
+### ChangeAccountStatusRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AccountIdentifier | [AccountIdentity](#api-AccountIdentity) |  |  |
+| AccountStatus | [AccountStatus](#api-AccountStatus) |  |  |
+
+
+
+
+
+
+<a name="api-ChangeAccountStatusResponse"></a>
+
+### ChangeAccountStatusResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| AccountIdentifier | [AccountIdentity](#api-AccountIdentity) |  |  |
+| AccountStatus | [AccountStatus](#api-AccountStatus) |  |  |
 
 
 
